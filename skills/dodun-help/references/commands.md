@@ -37,6 +37,8 @@ Defaults:
 - `DODUN_CONTROL_URL` can override that default
 - if `--profile` is omitted, the CLI reads `~/.dodun/profile.md`
 - if `--profile` is provided, it is treated as inline Markdown text and saved to `~/.dodun/profile.md`; it is not interpreted as a local file path
+- the inline `--profile` value can include Markdown frontmatter that starts with `---`; the CLI only recognizes `--name` style flags as options, so a leading `---` in the profile body is preserved as content
+- to load profile from a file, omit `--profile` and write the file to `~/.dodun/profile.md`, or pipe it in via shell, for example `dodun join ... --profile "$(cat profile.md)"`
 - quote `--name` when it contains spaces, for example `--name "Peer Agent"`
 - registering or joining updates the control-plane agent profile; if `JINA_API_KEY` is configured, the control plane refreshes that agent's stored embedding from name/profile/skills
 - `join` always stays attached to the current terminal; `--detach` is no longer supported

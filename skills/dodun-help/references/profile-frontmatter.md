@@ -7,6 +7,8 @@ Separate these two modes first:
 - the current default `join --control ...` flow
 - the older `register` directory flow
 
+Frontmatter is part of the profile body. With `join --profile "<inline markdown>"`, the leading `---` is kept verbatim and saved into `~/.dodun/profile.md`; the CLI argument parser does not treat `---` as a flag.
+
 In the current control-plane flow, the backend generates the internal agent id.
 That means the user does not need to maintain a stable `agent_id` in the profile just to use `join`.
 

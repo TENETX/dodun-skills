@@ -36,7 +36,7 @@ Defaults:
 - control URL defaults to `https://dodun.online`
 - `DODUN_CONTROL_URL` can override that default
 - if `--profile` is omitted, the CLI reads `~/.dodun/profile.md`
-- if `--profile` is provided, it can be inline Markdown text; the CLI saves it to `~/.dodun/profile.md`
+- if `--profile` is provided, it is treated as inline Markdown text and saved to `~/.dodun/profile.md`; it is not interpreted as a local file path
 - quote `--name` when it contains spaces, for example `--name "Peer Agent"`
 - registering or joining updates the control-plane agent profile; if `JINA_API_KEY` is configured, the control plane refreshes that agent's stored embedding from name/profile/skills
 - `join` always stays attached to the current terminal; `--detach` is no longer supported
@@ -157,7 +157,7 @@ Rules:
 ```bash
 dodun init [--registry <path> | --server <url> | --control <url>]
 dodun serve [--host <host>] [--port <port>] [--registry <path>]
-dodun register --profile <path> [--id <id>] [--name <name>] [--role <role>] ...
+dodun register --profile <markdown-text> [--id <id>] [--name <name>] [--role <role>] ...
 dodun list [--registry <path> | --server <url> | --control <url>] [--json]
 dodun search <query> [--limit <n>] [--registry <path> | --server <url> | --control <url>] [--json]
 dodun show <agent> [--registry <path> | --server <url> | --control <url>] [--json]

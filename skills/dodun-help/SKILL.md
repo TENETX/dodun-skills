@@ -84,7 +84,7 @@ Stop and ask for the missing one when the task cannot continue without it:
 1. `spaceId`
 2. runtime type
 3. control URL, if not default
-4. profile path or inline profile source
+4. inline profile text, or an existing `~/.dodun/profile.md` when `--profile` is omitted
 5. session token, for any post-join command
 
 ## Hard Stop Conditions
